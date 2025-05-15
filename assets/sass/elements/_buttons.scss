@@ -1,0 +1,424 @@
+/*----------------------------------------*/
+/* scroll to top
+/*----------------------------------------*/
+.scrollToTopBtn {
+  background-color: $accent-1;
+  border: 1px solid $accent-1;
+  border-radius: 8px;
+  color: $white;
+  cursor: pointer;
+  font-size: clamp(18px, 1.25vw, 48px);
+  line-height: 48px;
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  width: clamp(40px, 2.5vw, 64px);
+  height: clamp(40px, 2.5vw, 64px);
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  z-index: 100;
+  opacity: 0;
+  transform: translateY(100px);
+  transition: all .5s ease;
+
+  &:hover {
+    background: $light-black;
+    color: $accent-1;
+    transition: $transition;
+    border: 1px solid $accent-1;
+  }
+}
+
+.showBtn {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.cus-btn {
+  position: relative;
+  background-color: $accent-1;
+  padding: clamp(8px, 0.833vw, 24px) clamp(24px, 1.667vw, 48px);
+  border-radius: 0;
+  border: 1px solid $accent-1;
+  overflow: hidden;
+  transition: .3s;
+  z-index: 1;
+  font-size: clamp(16px, 0.938vw, 22px);
+  font-weight: 700;
+  line-height: 120%;
+  letter-spacing: 0.32px;
+  text-transform: uppercase;
+  font-family: $font-primary;
+  text-align: center;
+  color: $white;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  width: max-content;
+
+  @media (max-width: 1199px) {
+    font-size: clamp(14px, 1.251vw, 18px);
+  }
+
+  @media (max-width: 575px) {
+    font-size: clamp(11px, 2.261vw, 14px);
+    padding: 8px 12px;
+  }
+
+  &.btn-sec{
+    justify-content: center;
+    border: 1px solid $light-black;
+    background-color: $light-black;
+    width: 100%;
+  }
+
+  &::before {
+    content: '';
+    width: 0;
+    height: 300%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(5deg);
+    background: $white;
+    transition: .5s ease;
+    display: block;
+    z-index: -1;
+  }
+
+  &::after {
+    content: '';
+    display: inline-block;
+    width: 24px; /* Adjust the width of the SVG icon */
+    height: 24px; /* Adjust the height of the SVG icon */
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M19.8739 7.98103C19.5301 7.98103 19.2038 8.05711 18.9102 8.19234C18.675 7.16583 17.7549 6.3975 16.658 6.3975C16.3065 6.3975 15.9733 6.47667 15.6748 6.61762C15.4113 5.63128 14.5103 4.90252 13.442 4.90252C13.121 4.90252 12.8152 4.96842 12.5371 5.0872V2.31113C12.5372 1.03673 11.5004 0 10.226 0C8.95165 0 7.91486 1.03673 7.91486 2.31113V13.3079L6.72321 11.5389L6.70455 11.5157C5.81233 10.4066 4.24263 10.1601 3.05346 10.9425C2.43161 11.3516 2.01035 11.9791 1.86719 12.7095C1.72493 13.4354 1.87544 14.171 2.29099 14.7823L6.54391 21.4861L6.55807 21.5076C7.63001 23.0682 9.40033 24 11.2937 24H16.0657C19.4399 24 22.1851 21.2549 22.1851 17.8807V10.2921C22.1851 9.01777 21.1483 7.98103 19.8739 7.98103ZM20.7788 17.8807C20.7788 20.4795 18.6646 22.5938 16.0657 22.5938H11.2937C9.86786 22.5938 8.53451 21.8941 7.72432 20.7216L3.47201 14.0188L3.45785 13.9974C3.25211 13.6978 3.17735 13.3365 3.24719 12.9799C3.31708 12.6234 3.52277 12.317 3.82633 12.1173C4.39938 11.7403 5.15351 11.8527 5.59183 12.3765L9.32111 17.9123V2.31113C9.32111 1.81214 9.72705 1.40625 10.226 1.40625C10.725 1.40625 11.1309 1.81214 11.1309 2.31113V10.6528H12.5372V7.21369C12.5372 6.7147 12.9431 6.30881 13.442 6.30881C13.941 6.30881 14.3469 6.7147 14.3469 7.21369V10.6528H15.7532V8.70862C15.7532 8.20964 16.1591 7.80375 16.658 7.80375C17.157 7.80375 17.5629 8.20964 17.5629 8.70862V10.6528H18.9692V10.2922C18.9692 9.79317 19.3751 9.38728 19.874 9.38728C20.373 9.38728 20.7789 9.79317 20.7789 10.2922V17.8807H20.7788Z" fill="white"/></svg>');
+    background-size: contain; /* Adjust the sizing as needed */
+    background-repeat: no-repeat;
+    padding-left: clamp(4px, 0.417vw, 12px);
+    transition: $transition;
+
+  }
+
+  &:hover {
+    color: $black;
+    transition: $transition;
+    border: 1px solid $black;
+
+    &::before {
+      width: 105%;
+    }
+
+    &::after {
+      transition: $transition;
+      filter: invert(1); /* This inverts the SVG color on hover */
+    }
+  }
+}
+
+.cus-btn-2 {
+  position: relative;
+  background-color: $white;
+  padding: clamp(8px, 0.833vw, 24px) clamp(24px, 1.667vw, 48px);
+  border-radius: 0;
+  border: 1px solid $black;
+  overflow: hidden;
+  transition: .3s;
+  z-index: 1;
+  font-size: clamp(16px, 0.938vw, 22px);
+  font-weight: 700;
+  line-height: 120%;
+  letter-spacing: 0.32px;
+  text-transform: uppercase;
+  font-family: $font-primary;
+  text-align: center;
+  color: $black;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  @media (max-width: 1199px) {
+    font-size: clamp(14px, 1.251vw, 18px);
+  }
+
+  @media (max-width: 575px) {
+    font-size: clamp(11px, 2.261vw, 14px);
+    padding: 8px 12px;
+  }
+
+  &::before {
+    content: '';
+    width: 0;
+    height: 300%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(5deg);
+    background: $accent-1;
+    transition: .5s ease;
+    display: block;
+    z-index: -1;
+  }
+
+  &::after {
+    content: '';
+    display: inline-block;
+    width: 24px; /* Adjust the width of the SVG icon */
+    height: 24px; /* Adjust the height of the SVG icon */
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M19.8739 7.98103C19.5301 7.98103 19.2038 8.05711 18.9102 8.19234C18.675 7.16583 17.7549 6.3975 16.658 6.3975C16.3065 6.3975 15.9733 6.47667 15.6748 6.61762C15.4113 5.63128 14.5103 4.90252 13.442 4.90252C13.121 4.90252 12.8152 4.96842 12.5371 5.0872V2.31113C12.5372 1.03673 11.5004 0 10.226 0C8.95165 0 7.91486 1.03673 7.91486 2.31113V13.3079L6.72321 11.5389L6.70455 11.5157C5.81233 10.4066 4.24263 10.1601 3.05346 10.9425C2.43161 11.3516 2.01035 11.9791 1.86719 12.7095C1.72493 13.4354 1.87544 14.171 2.29099 14.7823L6.54391 21.4861L6.55807 21.5076C7.63001 23.0682 9.40033 24 11.2937 24H16.0657C19.4399 24 22.1851 21.2549 22.1851 17.8807V10.2921C22.1851 9.01777 21.1483 7.98103 19.8739 7.98103ZM20.7788 17.8807C20.7788 20.4795 18.6646 22.5938 16.0657 22.5938H11.2937C9.86786 22.5938 8.53451 21.8941 7.72432 20.7216L3.47201 14.0188L3.45785 13.9974C3.25211 13.6978 3.17735 13.3365 3.24719 12.9799C3.31708 12.6234 3.52277 12.317 3.82633 12.1173C4.39938 11.7403 5.15351 11.8527 5.59183 12.3765L9.32111 17.9123V2.31113C9.32111 1.81214 9.72705 1.40625 10.226 1.40625C10.725 1.40625 11.1309 1.81214 11.1309 2.31113V10.6528H12.5372V7.21369C12.5372 6.7147 12.9431 6.30881 13.442 6.30881C13.941 6.30881 14.3469 6.7147 14.3469 7.21369V10.6528H15.7532V8.70862C15.7532 8.20964 16.1591 7.80375 16.658 7.80375C17.157 7.80375 17.5629 8.20964 17.5629 8.70862V10.6528H18.9692V10.2922C18.9692 9.79317 19.3751 9.38728 19.874 9.38728C20.373 9.38728 20.7789 9.79317 20.7789 10.2922V17.8807H20.7788Z" fill="white"/></svg>');
+    background-size: contain; /* Adjust the sizing as needed */
+    background-repeat: no-repeat;
+    padding-left: clamp(4px, 0.417vw, 12px);
+    transition: $transition;
+    filter: invert(1);
+  }
+
+  &:hover {
+    color: $white;
+    transition: $transition;
+    border: 1px solid $accent-1;
+
+    &::before {
+      width: 105%;
+    }
+
+    &::after {
+      transition: $transition;
+      filter: invert(0); /* This inverts the SVG color on hover */
+    }
+  }
+}
+
+.cus-btn-3 {
+  position: relative;
+  background-color: $accent-1;
+  padding: clamp(4px, 0.417vw, 16px) clamp(12px, 0.833vw, 32px);
+  border-radius: 0;
+  border: 1px solid $accent-1;
+  overflow: hidden;
+  transition: .3s;
+  z-index: 1;
+  font-size: clamp(16px, 0.938vw, 22px);
+  font-weight: 500;
+  line-height: 120%;
+  letter-spacing: 0.32px;
+  text-transform: uppercase;
+  font-family: $font-primary;
+  text-align: center;
+  color: $white;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  width: max-content;
+
+
+  @media (max-width: 1199px) {
+    font-size: clamp(14px, 1.251vw, 18px);
+  }
+
+  @media (max-width: 575px) {
+    font-size: clamp(11px, 2.261vw, 14px);
+    padding: 8px 12px;
+  }
+
+  &::before {
+    content: '';
+    width: 0;
+    height: 300%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(5deg);
+    background: $white;
+    transition: .5s ease;
+    display: block;
+    z-index: -1;
+  }
+
+  &::after {
+    content: '';
+    display: inline-block;
+    width: 24px; /* Adjust the width of the SVG icon */
+    height: 24px; /* Adjust the height of the SVG icon */
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M20.606 5.31366C20.5066 5.14138 20.314 5.04499 20.1166 5.06856L3.03082 7.10626C2.83533 7.12958 2.67204 7.26605 2.61432 7.45431C2.55664 7.64255 2.61549 7.84708 2.76435 7.97591L8.0588 12.5577L9.37958 19.4338C9.41559 19.6213 9.55562 19.7711 9.73904 19.8202C9.74474 19.8218 9.75049 19.8232 9.75628 19.8245C9.94811 19.8687 10.148 19.7955 10.2659 19.6378L20.5735 5.8601C20.6927 5.70082 20.7055 5.4859 20.606 5.31366ZM4.26597 7.96038L17.8291 6.34278L8.57236 11.6871L4.26597 7.96038ZM10.1438 18.1411L9.06955 12.5482L18.3264 7.20389L10.1438 18.1411Z" fill="white"/></svg>');
+    background-size: contain; /* Adjust the sizing as needed */
+    background-repeat: no-repeat;
+    padding-left: clamp(4px, 0.417vw, 12px);
+    transition: $transition;
+
+  }
+
+  &:hover {
+    color: $black;
+    transition: $transition;
+    border: 1px solid $black;
+
+    &::before {
+      width: 105%;
+    }
+
+    &::after {
+      transition: $transition;
+      filter: invert(1); /* This inverts the SVG color on hover */
+    }
+  }
+}
+
+.simple-btn{
+  font-size: clamp(17px, 0.938vw, 22px);
+  font-weight: 700;
+  line-height: 120%;
+  color: $black;
+  transition: $transition;
+  display: flex;
+  align-items: center;
+  gap: clamp(4px, 0.417vw, 12px);
+  position: relative;
+  &:after{
+    content: '';
+    position: absolute;
+    bottom: -6px;
+    width: clamp(154px, 8.646vw, 250px);
+    height: 1px;
+    background-color: $light-black;
+    
+    @include media-query(490px){
+      bottom: -4px;
+      width: 147px;
+    }
+  }
+  svg{
+    width: clamp(16px, 1.25vw, 48px);
+    height: clamp(16px, 1.25vw, 49px);
+    path{
+      fill: $black;
+      transition: $transition;
+    }
+  }
+  &:hover{
+    transition: $transition;
+    color: $accent-1;
+    path{
+      transition: $transition;
+      fill: $accent-1;
+    }
+  }
+}
+
+// SOCIAL ICONS
+.social-links {
+  ul {
+    display: flex;
+    align-items: center;
+    gap: clamp(8px, 0.625vw, 20px);
+    justify-content: end;
+    li {
+      a {
+        width: clamp(26px, 1.667vw, 60px);
+        height: clamp(26px, 1.667vw, 60px);
+        display: grid;
+        align-items: center;
+        justify-content: center;
+        border-radius: 3.5px;
+        border: 0.5px solid $medium-gray;
+        transition: $transition;
+        &:hover{
+          background-color: $accent-2;
+          box-shadow: 0 0px 15px rgba(170, 71, 188, 1);
+        }
+      }
+    }
+  }
+}
+
+// ===================  PAGINATIONS =================== // 
+.pagination {
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  overflow: hidden;
+  display: flex;
+
+  #border-pagination {
+    display: flex;
+    gap: clamp(16px, 1.25vw, 30px);
+    margin: 0 auto;
+    padding: 0;
+    text-align: center;
+
+    li {
+      display: inline;
+
+      a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        color: $light-black;
+        width: clamp(36px, 3.333vw, 72px);
+        height: clamp(36px, 3.333vw, 72px);
+        border: 1px solid $light-black;
+        border-radius: 5px;
+        float: left;
+        transition: $transition;
+        font-size: clamp(16.40px, 1.302vw, 50px);
+        font-weight: 700;
+        line-height: 130%;
+        /* 32.5px */
+        letter-spacing: -0.5px;
+
+        @include media-query(991px) {
+          font-size: clamp(20px, 2.619vw, 23px);
+          font-weight: 600;
+        }
+
+        @include media-query(767px) {
+          font-size: clamp(19px, 3.047vw, 21px);
+        }
+
+        @include media-query(575px) {
+          font-size: clamp(18px, 4.634vw, 20px);
+          font-weight: 500;
+
+        }
+
+
+        svg {
+          width: clamp(20px, 2.667vw, 60px);
+          height: clamp(20px, 2.667vw, 60px);
+          
+          path {
+            stroke: $light-black;
+            transition: $transition;
+          }
+        }
+
+        &.active {
+          background-color: $accent-1;
+          color: $white;
+          border: 1px solid $accent-1;
+
+          svg {
+            path {
+              stroke: $white;
+              transition: $transition;
+            }
+          }
+        }
+
+        &:hover {
+          background-color: $accent-1;
+          color: $white;
+          border: 1px solid $accent-1;
+
+          svg {
+            path {
+              stroke: $white;
+              transition: $transition;
+            }
+          }
+        }
+      }
+    }
+  }
+}

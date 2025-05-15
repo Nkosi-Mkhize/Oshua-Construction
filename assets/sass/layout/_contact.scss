@@ -1,0 +1,19 @@
+
+.contact-banner{
+    background: url('../media/backgrounds/contact-banner.png') no-repeat;
+    background-position: center;
+    background-size: cover;
+    .contact-container{
+        padding: clamp(20px, 1.667vw, 50px);
+    }
+    form{
+        padding: clamp(20px, 1.667vw, 50px);
+    }
+}
+
+.map{
+    iframe{
+        width: 100%;
+        height: clamp(400px, 31.979vw, 750px);
+    }
+}

@@ -1,0 +1,37 @@
+
+.error-sec{
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    height: calc(100vh - 164px);
+    @include media-query(1199px){
+        height: calc(100vh - 121px);
+    }
+    h1{
+        font-size: 20.833vw;
+        color: $light-black;
+        line-height: 72%;
+    }
+    .text-block{
+        width: 29.167vw;
+        @include media-query(1024px){
+            width: 41.992vw;
+        }
+        @include media-query(490px){
+            width: 70.143vw;
+        }
+        .content-box{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: clamp(16px, 1.667vw, 48px);
+            p{
+                br{
+                    @include media-query(575px){
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+}

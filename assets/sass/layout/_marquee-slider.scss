@@ -1,0 +1,32 @@
+.marquee {
+  padding: clamp(24px, 3.333vw, 92px) 0;
+  background: url('../media/brands/marquee.png') no-repeat;
+  background-position: center;
+  background-size: cover;
+
+  &.whyChoose {
+    background: $lightest-gray;
+  }
+
+  .text-block {
+    font-size: clamp(48px, 4.427vw, 120px);
+    font-family: $font-sec;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 120%;
+    text-transform: uppercase;
+    color: $white;
+
+    @include media-query(991px) {
+      font-size: clamp(38px, 5.119vw, 48px);
+    }
+
+    @include media-query(767px) {
+      font-size: clamp(35px, 6.094vw, 45px);
+    }
+
+    @include media-query(575px) {
+      font-size: clamp(18px, 4.78vw, 40px);
+    }
+  }
+}

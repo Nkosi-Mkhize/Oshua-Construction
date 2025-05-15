@@ -1,0 +1,21 @@
+
+.pricing{
+    .pricing-wrapper{
+        .pricing-card{
+            background: $lightest-gray;
+            border: 2px solid $medium-gray;
+            padding: clamp(20px, 1.667vw, 50px);
+            .price-box{
+                background: $white;
+                padding: clamp(16px, 1.25vw, 32px) clamp(8px, 0.833vw, 24px);
+            }
+            .plan-box{
+                .plan-row{
+                    display: flex;
+                    align-items: center;
+                    gap: 12px;
+                }
+            }
+        }
+    }
+}

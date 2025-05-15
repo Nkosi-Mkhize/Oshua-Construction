@@ -1,0 +1,77 @@
+
+// Sidebar
+.sidebar{
+    border: 2px solid $medium-gray;
+    background: $lightest-gray;
+    padding: clamp(20px, 1.667vw, 48px);
+
+    .filter-block {
+        .list{
+            li{
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+            }
+        }
+        .title {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .sidebar-blog{
+            display: flex;
+            align-items: center;
+            gap: clamp(10px, 0.833vw, 24px);
+            .image-box{
+                overflow: hidden;
+                display: flex;
+                flex-shrink: 0;
+                img{
+                    width: clamp(90px, 6.667vw, 160px);
+                    -webkit-transition: all 0.6s linear 0s;
+                    transition: all 0.6s linear 0s;
+                }
+            }
+            .blog-heading{
+                color: $light-black;
+                transition: $transition;
+            }
+            &:hover{
+                .image-box{
+                    img{
+                        -webkit-transform: scale(1.1);
+                        transform: scale(1.1);
+                        -webkit-transition: all 0.6s linear 0s;
+                        transition: all 0.6s linear 0s;
+                    }
+                }
+                .blog-heading{
+                    transition: $transition;
+                    color: $accent-1;
+                }
+            }
+        }
+        .content-block{
+            .tags-list{
+                display: flex;
+                align-items: center;
+                flex-wrap: wrap;
+                gap: clamp(10px, 0.833vw, 24px);
+                a{
+                    background: $white;
+                    font-size: clamp(12px, 0.677vw, 16px);
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: 120%;
+                    padding: 8px 12px;
+                    border: 1px solid $medium-gray;
+                }
+            }
+        }   
+    }
+}
+
+
+

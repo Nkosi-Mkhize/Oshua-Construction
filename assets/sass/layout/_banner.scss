@@ -1,0 +1,167 @@
+.hero-banner {
+    background: url('../media/backgrounds/hero-banner-bg.png') no-repeat;
+    background-position: center;
+    background-size: cover;
+
+    @include media-query(1024px) {
+        height: 76vh;
+    }
+
+    @include media-query(876px) {
+        height: 674px;
+    }
+
+    @include media-query(820px) {
+        height: 90vh;
+    }
+
+    @include media-query(490px) {
+        height: 90vh;
+    }
+
+    @include media-query(430px) {
+        height: 83vh;
+    }
+
+    @include media-query(399px) {
+        height: 90vh;
+    }
+
+    .vec-image {
+        background: url('../media/backgrounds/hero-banner-vec.png') no-repeat;
+        background-position: center;
+        background-size: cover;
+
+        @include media-query(1024px) {
+            background-position: 40% center;
+            background-size: 150%;
+            height: 91vh;
+        }
+
+        @include media-query(876px) {
+            height: 700px;
+        }
+
+        @include media-query(820px) {
+            height: 91vh;
+            background-position: 37% 87%;
+            background-size: 171% 92%;
+        }
+
+        @include media-query(768px) {
+            background-position: 40% 96%;
+            background-size: 150% 81%;
+        }
+
+        @include media-query(490px) {
+            background-position: 38% 100%;
+            background-size: 153% 63%;
+        }
+    }
+
+    .banner-content {
+        display: grid;
+        justify-content: center;
+        align-items: center;
+        padding: 16.875vw 0 14.896vw 7.813vw;
+
+        @include media-query(1024px) {
+            padding: 26.875vw 0 14.896vw 0;
+        }
+
+        @include media-query(490px) {
+            padding: 50.49vw 0;
+        }
+
+        .banner-heading {
+            margin-bottom: 8.906vw;
+
+            @include media-query(820px) {
+                margin-bottom: 3.902vw;
+            }
+
+            h5 {
+                background: url('../media/vector/heading-line.png') no-repeat;
+                background-position: -16px 20px;
+
+                @include media-query(1599px) {
+                    background-position: -70px 18px;
+                }
+
+                @include media-query(1499px) {
+                    background-position: -88px 15px;
+                }
+
+                @include media-query(1399px) {
+                    background-position: -106px 14px;
+                }
+
+                @include media-query(1024px) {
+                    background-position: -132px 13px;
+                }
+
+                @include media-query(820px) {
+                    background-position: -63px 16px;
+                }
+
+                @include media-query(768px) {
+                    background-position: -79px 18px;
+                }
+
+                @include media-query(490px) {
+                    background-position: -105px 14px;
+                }
+
+                @include media-query(430px) {
+                    background-position: -83px 16px;
+                }
+
+                @include media-query(399px) {
+                    background-position: -105px 14px;
+                }
+            }
+
+            h1 {
+                br {
+
+                    @include media-query(490px) {
+                        display: none;
+                    }
+                }
+
+            }
+
+            .main-text {
+                font-size: clamp(60px, 3.698vw, 120px);
+                font-style: normal;
+                font-weight: 700;
+                line-height: 119%;
+                letter-spacing: -1.42px;
+                text-transform: uppercase;
+
+                @include media-query(991px) {
+                    font-size: clamp(48px, 5.119vw, 48px);
+                }
+
+                @include media-query(767px) {
+                    font-size: clamp(42px, 6.094vw, 45px);
+                }
+
+                @include media-query(575px) {
+                    font-size: clamp(32px, 8.78vw, 40px);
+                }
+            }
+        }
+
+        .banner-btn {
+            display: flex;
+            align-items: center;
+            justify-content: end;
+            gap: clamp(16px, 1.25vw, 32px);
+
+            @include media-query(820px) {
+                justify-content: flex-start;
+            }
+        }
+    }
+}

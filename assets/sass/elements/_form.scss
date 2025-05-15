@@ -1,0 +1,127 @@
+/*-------------------------
+  Form Styling
+-------------------------*/
+
+
+textarea.form-control {
+  min-height: 130px;
+  max-height: 150px;
+
+  @media(max-width: 578px) {
+    min-height: 80px;
+    max-height: 80px;
+  }
+}
+
+.form-control {
+  padding: 14px 16px;
+  border-radius: 0;
+  border: 1px solid $medium-gray;
+  background: $white;
+  font-family: $font-primary;
+  font-size: clamp(17px, 0.938vw, 22px);
+  font-weight: 400;
+  line-height: 140%;
+  letter-spacing: 0.32px;
+  position: relative;
+  color: $black;
+  box-shadow: none;
+
+
+  &:focus {
+    box-shadow: none;
+    outline: 0;
+    color: $black !important;
+    background: $white;
+  }
+
+  &:hover {
+    color: $black !important;
+  }
+
+  &::placeholder {
+    color: $medium-gray;
+    opacity: 1;
+  }
+}
+
+input[type="file"] {
+  display: none;
+}
+
+label {
+  &.error {
+    color: #ff0000;
+  }
+}
+
+
+// Check Styling
+.material-checkbox {
+  display: flex;
+  align-items: start;
+  color: #FFFCFA;
+  cursor: pointer;
+
+  input[type="checkbox"] {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+  input[type="checkbox"]:checked {
+    &~.checkmark {
+      background-color: #470053;
+      border-color: #781d88bb;
+
+      &:after {
+        content: "";
+        position: absolute;
+        top: 2px;
+        left: 6px;
+        width: 4px;
+        height: 10px;
+        border: solid white;
+        border-width: 0 2px 2px 0;
+        transform: rotate(45deg);
+      }
+    }
+  }
+
+  input[type="checkbox"]:focus {
+    &~.checkmark {
+      box-shadow: 0 0 0 2px #aa47bc86;
+    }
+  }
+
+  &:hover {
+    input[type="checkbox"] {
+      &~.checkmark {
+        border-color: #AB47BC;
+      }
+    }
+  }
+
+  input[type="checkbox"]:disabled {
+    &~.checkmark {
+      opacity: 0.5;
+      cursor: not-allowed;
+
+      &:hover {
+        border-color: #4d4d4d;
+      }
+    }
+  }
+}
+
+.checkmark {
+  position: relative;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin-right: 12px;
+  border: 2px solid #92949F;
+  border-radius: 4px;
+  transition: all 0.3s;
+}

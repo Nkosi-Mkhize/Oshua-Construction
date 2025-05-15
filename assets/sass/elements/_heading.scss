@@ -1,0 +1,21 @@
+.heading {
+  padding-left: clamp(60px, 7.604vw, 180px);
+  @include media-query(575px) {
+    padding: 0;
+  }
+  br {
+    @include media-query(575px) {
+      display: none;
+    }
+  }
+
+  p {
+    @include media-query(575px) {
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      line-clamp: 3;
+      -webkit-box-orient: vertical;
+    }
+  }
+}

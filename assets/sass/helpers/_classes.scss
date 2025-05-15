@@ -1,0 +1,100 @@
+// Text Colors
+.color-primary {
+  color: $accent-1 !important;
+}
+
+.color-sec {
+  color: $accent-2 !important;
+}
+
+.dark-black {
+  color: $black !important;
+}
+
+.light-black {
+  color: $light-black !important;
+}
+
+.white {
+  color: $white !important;
+}
+
+.dark-gray {
+  color: $dark-gray !important;
+}
+
+.medium-gray {
+  color: $medium-gray !important;
+}
+
+.light-gray {
+  color: $lightest-gray !important;
+}
+
+
+// Background Colors
+.bg-color-primary {
+  background-color: $accent-1 !important;
+}
+
+.bg-color-sec {
+  background-color: $accent-2 !important;
+}
+
+.bg-dark-black {
+  background-color: $black !important;
+}
+
+.bg-light-black {
+  background-color: $light-black !important;
+}
+
+.bg-white {
+  background-color: $white !important;
+}
+
+.bg-dark-gray {
+  background-color: $dark-gray !important;
+}
+
+.bg-medium-gray {
+  background-color: $medium-gray !important;
+}
+
+.bg-light-gray {
+  background-color: $lightest-gray !important;
+}
+
+// Gradient Color
+.accent-gradient {
+  background-color: linear-gradient(180deg, rgba(47, 61, 126, 0.00) 0%, rgba(47, 61, 126, 0.40) 0.01%, rgba(47, 61, 126, 0.20) 45.5%, rgba(47, 61, 126, 0.40) 100%) !important;
+}
+
+
+// ------------- Font Weight -------------- //
+.fw-400 {
+  font-weight: 400;
+}
+
+.fw-500 {
+  font-weight: 500;
+}
+
+.fw-600 {
+  font-weight: 600;
+}
+
+.fw-700 {
+  font-weight: 700;
+}
+
+.fw-800 {
+  font-weight: 800;
+}
+
+.font-primary{
+  font-family: $font-primary;
+}
+.font-sec{
+  font-family: $font-sec;
+}

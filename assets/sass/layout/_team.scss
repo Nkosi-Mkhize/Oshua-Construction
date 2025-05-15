@@ -1,0 +1,138 @@
+.team {
+    .top-row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background: $lightest-gray;
+        padding: clamp(24px, 4.167vw, 180px) clamp(24px, 12.5vw, 350px) clamp(80px, 13.75vw, 350px) clamp(24px, 12.5vw, 350px);
+
+        @include media-query(575px) {
+            padding: 20px 20px 64px 20px;
+            display: block;
+        }
+
+        .heading {
+            padding-left: 0;
+            @include media-query(575px) {
+                padding-bottom: 24px;
+            }
+        }
+
+        // Slider Arrows
+        .slider-arrows {
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            align-items: flex-start;
+            gap: 24px;
+
+            @include media-query(575px) {
+                justify-content: center;
+            }
+        }
+
+        .arrow-btn {
+            display: grid;
+            align-items: center;
+            justify-content: center;
+            width: clamp(40px, 3.333vw, 90px);
+            height: clamp(40px, 3.333vw, 90px);
+            background: transparent;
+            border-radius: 5px;
+            border: 1px solid $light-black;
+            transition: $transition;
+            cursor: pointer;
+
+            @include media-query(1024px) {
+                width: clamp(32px, 4.688vw, 80px);
+                height: clamp(32px, 4.688vw, 80px);
+            }
+
+            @include media-query(490px) {
+                width: 34px;
+                height: 34px;
+            }
+
+            svg {
+                width: clamp(20px, 1.667vw, 48px);
+                height: clamp(20px, 1.667vw, 48px);
+                path {
+                    transition: $transition;
+                }
+            }
+
+            &:hover {
+                background-color: $accent-1;
+                transition: $transition;
+                border: 1px solid $white;
+
+                svg {
+                    path {
+                        stroke: $white;
+                        transition: $transition;
+                    }
+                }
+            }
+        }
+    }
+
+    .team-wrapper {
+        padding: 0 clamp(72px, 7.604vw, 180px);
+        margin-top: -10.417vw;
+        @include media-query(575px) {
+            padding: 0 4px;
+        }
+        .team-slider{
+            margin: 0 -12px;
+        }
+    }
+    .team-block {
+        position: relative;
+        margin: 0 12px;
+        &.v-2{
+            width: 100%;
+            margin-left: 0;
+            margin-right: 0;
+            margin-bottom: 48px;
+            img{
+                width: 100%;
+            }
+        }
+        .content-box {
+            position: relative;
+            margin-top: -2.292vw;
+            margin-left: 2.865vw;
+            margin-right: 2.865vw;
+            text-align: center;
+            padding: clamp(10px, 0.833vw, 24px) 0;
+            background: $lightest-gray;
+            border: 2px solid $medium-gray;
+            transition: $transition;
+            box-shadow: 0px -10px 20px $white;
+            @include media-query(575px) {
+                margin-top: -7.347vw;
+                margin-left: 32px;
+                margin-right: 32px;
+            }
+            h5{
+                transition: $transition;
+                color: $light-black;
+            }
+            
+        }
+
+        &:hover {
+            .content-box {
+                transition: $transition;
+                margin-top: -5.208vw;
+                @include media-query(575px) {
+                    margin-top: -15.347vw;
+                }
+                h5{
+                    transition: $transition;
+                    color: $accent-1;
+                }
+            }
+        }
+    }
+}

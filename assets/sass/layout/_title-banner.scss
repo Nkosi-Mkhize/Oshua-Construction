@@ -1,0 +1,29 @@
+
+.title-banner{
+    background: url('../media/backgrounds/title-banner.png') no-repeat;
+    background-position: center;
+    background-size: cover;
+    padding: 6.042vw 0;
+    @include media-query(1024px){
+        padding-left: 3.906vw;
+    }
+    @include media-query(490px){
+        background-position: 75%;
+        padding-left: 4px;
+    }
+    h1{
+        @include media-query(490px){
+            font-size: clamp(29px, 6.78vw, 40px);
+        }
+    }
+    p{
+        @include media-query(575px){
+            width: 80%;
+        }
+        br{
+            @include media-query(575px){
+                display: none;
+            }
+        }
+    }
+}
